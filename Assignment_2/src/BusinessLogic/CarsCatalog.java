@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package BusinessLogic;
 import java.text.ParseException;
 import java.util.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.time.LocalDate; 
+import model.Car;
 
 /**
  *
  * @author sravyaganda
  */
 public class CarsCatalog {
-    
-      private ArrayList<Car> CarsCatalog;
+     private ArrayList<Car> CarsCatalog;
 
       
       public CarsCatalog()
@@ -58,6 +58,6 @@ public class CarsCatalog {
     {
         CarsCatalog.remove(c);
     }
-}
-      
     
+    
+}

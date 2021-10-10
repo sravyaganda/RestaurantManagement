@@ -8,12 +8,13 @@ package ui;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import model.Car;
-import model.CarsCatalog;
 import ui.*;
+import BusinessLogic.*;
+
 
 /**
  *
- * @author reddy
+ * @author sravyaganda
  */
 public class ManageUber extends javax.swing.JPanel {
 

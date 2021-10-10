@@ -11,10 +11,11 @@ import java.util.Date;
 import java.time.LocalDate; 
 import javax.swing.JPanel;
 import model.Car;
-import model.CarsCatalog;
+import BusinessLogic.*;
+
 /**
  *
- * @author reddy
+ * @author sravyaganda
  */
 public class NewCar extends javax.swing.JPanel {
 
@@ -230,11 +231,17 @@ public class NewCar extends javax.swing.JPanel {
         // TODO add your handling code here:
         try{
                   
-        int seatCap = Integer.parseInt(txtseatcapacity.getText());
+        int seatCap = Integer.parseInt(txtseatcapacity.getText());   
+        }
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Seat Capacity should be a Valid Number");
+            return;
+        }
+         try{
         int yearManufacture=Integer.parseInt(txtyear.getText());   
         }
         catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "Please input a valid number!");
+            JOptionPane.showMessageDialog(null, "Year of Manufacture should be a Valid Number");
             return;
         }
         String companyname = txtcompany.getText();

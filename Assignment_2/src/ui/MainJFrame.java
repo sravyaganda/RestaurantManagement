@@ -7,18 +7,30 @@ package ui;
 import java.awt.CardLayout;
 import model.*;
 import java.awt.CardLayout;
-
-
+import BusinessLogic.*;import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 /**
  *
- * @author reddy
+ * @author sravyaganda
  */
 public class MainJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainJFrame
      */
-     private CarsCatalog carsCatalog;
+    private static String lastUpdatedDate;
+    public static void setTime(){
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
+  LocalDateTime now = LocalDateTime.now();  
+   String lastUpdatedDate=dtf.format(now);}
+      public static String getTime(){
+      return lastUpdatedDate;
+      }
+  
+  private CarsCatalog carsCatalog;
     public MainJFrame() {
         initComponents();
         ManageUber.setLayout(new java.awt.CardLayout());
@@ -71,7 +83,7 @@ public class MainJFrame extends javax.swing.JFrame {
         ManageUber.setLayout(ManageUberLayout);
         ManageUberLayout.setHorizontalGroup(
             ManageUberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 293, Short.MAX_VALUE)
+            .addGap(0, 499, Short.MAX_VALUE)
         );
         ManageUberLayout.setVerticalGroup(
             ManageUberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,7 +96,7 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

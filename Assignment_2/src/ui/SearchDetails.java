@@ -15,14 +15,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import model.Car;
-import model.CarsCatalog;
+import BusinessLogic.*;
 import java.text.SimpleDateFormat;  
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;    
+import static ui.MainJFrame.getTime;
 
 /**
  *
- * @author reddy
+ * @author sravyaganda
  */
 public class SearchDetails extends javax.swing.JPanel {
 
@@ -69,6 +70,7 @@ public class SearchDetails extends javax.swing.JPanel {
         txtmaxseat = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         txtcertificate = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         jLabel1.setText("                                        Search Car Details");
 
@@ -172,6 +174,13 @@ public class SearchDetails extends javax.swing.JPanel {
             }
         });
 
+        jButton3.setText("Fleet Last Updated Date");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -220,7 +229,9 @@ public class SearchDetails extends javax.swing.JPanel {
                                             .addComponent(btnsearchmodel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(btnsearchlocation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnfirstcar)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnfirstcar))
                                 .addGap(18, 18, 18)
                                 .addComponent(btnavailablecars)
                                 .addGap(31, 31, 31)
@@ -248,7 +259,9 @@ public class SearchDetails extends javax.swing.JPanel {
                     .addComponent(btnunavailable)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtcertificate))
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtcompany, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnsearchcompany)
@@ -326,7 +339,6 @@ public class SearchDetails extends javax.swing.JPanel {
         }
         populateTable(list); 
         }
-        
     }//GEN-LAST:event_btnsearchcompanyActionPerformed
 
     private void btnsearchyearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchyearActionPerformed
@@ -494,6 +506,11 @@ HashSet<String> hset = new HashSet<String>(companyList);
       }
          
     }//GEN-LAST:event_txtcertificateActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        JOptionPane.showMessageDialog(null, "Fleet Last Updated Date :" + getTime());
+            return;
+    }//GEN-LAST:event_jButton3ActionPerformed
 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
         public void populateTable(ArrayList<Car> carsCatalog){
      
@@ -530,6 +547,7 @@ SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     private javax.swing.JButton btnunavailable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
