@@ -35,6 +35,7 @@ public class ModifyDetails extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.carsCatalog = carsCatalog;
         populateTable();
+           btnconfirmupdate.setEnabled(false);
     }
 
     /**
@@ -228,12 +229,13 @@ public class ModifyDetails extends javax.swing.JPanel {
             {
                 checked.setSelected(false); 
             }
-           
+           btnconfirmupdate.setEnabled(true);
         }
         else
         {
                 JOptionPane.showMessageDialog(null,"Please select a row"); 
         }
+        
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void tblCarsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCarsMouseClicked
@@ -246,6 +248,7 @@ public class ModifyDetails extends javax.swing.JPanel {
         int selectedrow=tblCars.getSelectedRow();
         if(selectedrow>=0)
         {
+               
          String x=tblCars.getValueAt(selectedrow, 0).toString() ;
          for(Car c: carsCatalog.getCarsCatalog())
          {
@@ -287,10 +290,13 @@ public class ModifyDetails extends javax.swing.JPanel {
                      checked.setSelected(false); 
                      txtcertificate.setText("");
                     this.carsCatalog.setLastUpdatedDate(dtf.format(LocalDateTime.now()));
+                     JOptionPane.showMessageDialog(null, "Details Updated Successfully");
+                    btnconfirmupdate.setEnabled(false);
              }
          }
           
         }
+     
        
     }//GEN-LAST:event_btnconfirmupdateActionPerformed
 
