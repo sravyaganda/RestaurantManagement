@@ -56,7 +56,7 @@
                                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel5" min="-2" pref="86" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
@@ -255,7 +255,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Certificate"/>
+        <Property name="text" type="java.lang.String" value="Maintenance Certificate Expiry Date"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtyear">

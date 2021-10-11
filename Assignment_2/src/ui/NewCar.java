@@ -98,7 +98,7 @@ public class NewCar extends javax.swing.JPanel {
 
         jLabel9.setText("Location");
 
-        jLabel10.setText("Certificate");
+        jLabel10.setText("Maintenance Certificate Expiry Date");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -132,7 +132,7 @@ public class NewCar extends javax.swing.JPanel {
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 23, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(120, 120, 120)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -238,11 +238,21 @@ public class NewCar extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Company cannot be empty!");
             return;
         }
-         String maincertificate = txtcompany.getText();
+         String maincertificate = txtcertificate.getText();
+        
         if(maincertificate==null || maincertificate.equals("")){
             JOptionPane.showMessageDialog(null, "maincertificate cannot be empty!");
             return;
         }
+        try{
+            SimpleDateFormat sdff = new SimpleDateFormat("yyyy-MM-dd");
+            sdff.parse(maincertificate);
+        }
+         catch(ParseException e)
+      {
+           JOptionPane.showMessageDialog(null, "Input Certificate Date In yyyy-MM-dd Format"); 
+           return;
+      }
         String color = txtcolor.getText();
         if(color==null || color.equals("")){
             JOptionPane.showMessageDialog(null, "Color cannot be empty!");
