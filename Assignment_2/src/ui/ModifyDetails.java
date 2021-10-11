@@ -11,6 +11,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import BusinessLogic.*;
+import java.text.ParseException;
 import model.Car;
 import java.text.SimpleDateFormat;   
 import java.time.LocalDateTime;
@@ -280,7 +281,17 @@ public class ModifyDetails extends javax.swing.JPanel {
             return;
                          }
                  c.setSeatCapacity(Integer.parseInt(txtseatcapacity.getText()));
-                 //c.setMaintainExpdate(tblCars.getValueAt(selectedrow, 6).toString());
+                
+                   try{
+                         String maincertificate = txtcertificate.getText();
+                  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                 c.setMaintainExpdate(sdf.parse(maincertificate));
+                   }
+                    catch(ParseException e)
+          {
+               JOptionPane.showMessageDialog(null, "Input Certificate Date In yyyy-MM-dd Format"); 
+           return;
+          }
                  c.setStatusOfCar(checked.isSelected());
                populateTable();
                txtlocation.setText("");
