@@ -21,20 +21,13 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    private static String lastUpdatedDate;
-    public static void setTime(){
-    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
-  LocalDateTime now = LocalDateTime.now();  
-   String lastUpdatedDate=dtf.format(now);}
-      public static String getTime(){
-      return lastUpdatedDate;
-      }
-  
+  DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
   private CarsCatalog carsCatalog;
     public MainJFrame() {
         initComponents();
         ManageUber.setLayout(new java.awt.CardLayout());
-        this.carsCatalog = new CarsCatalog();
+        this.carsCatalog = new CarsCatalog();  
+        this.carsCatalog.setLastUpdatedDate(dtf.format(LocalDateTime.now()));
     }
 
     /**

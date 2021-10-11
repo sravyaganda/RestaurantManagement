@@ -17,7 +17,15 @@ import model.Car;
  */
 public class CarsCatalog {
      private ArrayList<Car> CarsCatalog;
+     private String lastUpdatedDate;
 
+    public String getLastUpdatedDate() {
+        return lastUpdatedDate;
+    }
+
+    public void setLastUpdatedDate(String lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
       
       public CarsCatalog()
       {

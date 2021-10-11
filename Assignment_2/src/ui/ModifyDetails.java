@@ -13,8 +13,9 @@ import javax.swing.table.DefaultTableModel;
 import BusinessLogic.*;
 import model.Car;
 import java.text.SimpleDateFormat;   
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import ui.MainJFrame;
-import static ui.MainJFrame.setTime;
 /**
  *
  * @author sravyaganda
@@ -23,6 +24,7 @@ public class ModifyDetails extends javax.swing.JPanel {
 
         private JPanel userProcessContainer;
     private CarsCatalog carsCatalog;
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
     /**
      * Creates new form ModifyDetails
      */
@@ -284,7 +286,7 @@ public class ModifyDetails extends javax.swing.JPanel {
                      txtseatcapacity.setText("");
                      checked.setSelected(false); 
                      txtcertificate.setText("");
-                    setTime();
+                    this.carsCatalog.setLastUpdatedDate(dtf.format(LocalDateTime.now()));
              }
          }
           
